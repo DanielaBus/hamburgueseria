@@ -102,7 +102,7 @@ header nav .menu a {
     text-align: center;
     text-decoration: none;
     color: #aaa;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 0.0625rem solid #aaa;
 
     &:hover {
         color: var(--colorprincipal);
@@ -119,6 +119,29 @@ header nav .menu .activo {
 }
 
 /* mediaqueries*/
+@media(min-width: 37.5rem) {
+    header .nav-top .container {
+        & i {
+            font-size: 150%;
+        }
+
+        section .grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--gap);
+        }
+
+        & article {
+            padding: 1.25rem;
+            border-bottom: 0;
+            border-left: 1px solid #aaa;
+        }
+    }
+
+    section .grid article:last-child {
+        grid-column: 1/3;
+    }
+}
+
 
 /*@media (min-width: 48rem) {
     header .nav .container {
@@ -175,7 +198,7 @@ header nav .menu .activo {
 
         & i {
             transition: 0.5s;
-            transform: translateX(0.3125rem)
+            transform: translateX(0.3125rem);
         }
 
     }
@@ -191,4 +214,98 @@ header nav .menu .activo {
         color: white;
         font-size: 2rem;
     }
+}
+
+/*footer*/
+
+main section {
+    padding: 2.25rem 0.625rem;
+
+}
+
+section .container h2 {
+    font-family: var(--fuentetitulo);
+    font-size: 2rem;
+    text-align: center;
+
+
+    & span {
+        color: var(--colorprincipal);
+    }
+}
+
+section .container .underline {
+    position: relative;
+    width: 6.25rem;
+    margin: 0 auto 1.875rem auto;
+    color: var(--colorprincipal);
+    font-weight: 700;
+    text-align: center;
+
+    & hr {
+        position: absolute;
+        top: -0.125rem;
+        width: 100%;
+        border: 0.0625rem solid var(--colorprincipal);
+    }
+}
+
+section .grid {
+    display: grid;
+
+    & article {
+        padding: 1.25rem 0;
+        border-bottom: 1px solid #aaa;
+    }
+}
+
+section h3 {
+    margin: var(--gap) 0;
+    font-weight: 700;
+    font-size: 115%;
+
+}
+
+section p {
+    color: #666;
+    font-size: 95%;
+    line-height: 1.25rem;
+    margin-bottom: var(--gap);
+
+}
+
+section article a {
+    color: var(--colorprincipal);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+section article>div i {
+    border: 0.0625rem solid var(--colorprincipal);
+    display: inline-block;
+    padding: 0.8rem;
+    font-size: 150%;
+    color: var(--colorprincipal);
+}
+
+section h4 {
+    color: var(--colorprincipal);
+    font-size: 110%;
+    margin-bottom: var(--gap);
+}
+
+
+section figure .marco {
+    border: 3px solid var(--colorprincipal);
+    width: 90%;
+    margin-top: 1.25rem;
+    transform: rotateZ(10deg);
+
+    & img {
+        transform: rotateZ(-10deg);
+    }
+}
+
+section figure:hover :is(.marco, img) {
+    transform: rotateZ(0deg);
 }
