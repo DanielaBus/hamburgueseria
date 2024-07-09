@@ -10,7 +10,7 @@
 img {
     width: 100%;
     height: auto;
-    display: block0;
+    display: block;
 }
 
 :root {
@@ -18,7 +18,7 @@ img {
     --fuentetitulo: "Handlee", cursive;
     --colorprincipal:#fa573f;
     --colorsecundario: #21242e;
-    --fontsize: 68.75rem;
+    --fontsize: 1.25rem;
     --anchomaximo: 68.75rem;
     --gap: 1rem;
 
@@ -29,3 +29,10 @@ body {
     font-size: var(--fontsize);
 
 }
+.container {
+    max-width: var(--anchomaximo);
+    margin: 0;
+
+}
+
+/* inicio de header*/
