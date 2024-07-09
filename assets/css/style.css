@@ -1,0 +1,311 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css);
+
+* {
+    box-sizing: border;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+:root {
+    --fuenteprincipal: "Montserrat", sans-serif;
+    --fuentetitulo: "Handlee", cursive;
+    --colorprincipal: #fa573f;
+    --colorsecundario: #21242e;
+    --fontsize: 1.25rem;
+    --anchomaximo: 90rem;
+    --gap: 1rem;
+
+
+}
+
+body {
+    font-family: var(--fuenteprincipal);
+    font-size: var(--fontsize);
+
+
+}
+
+.container {
+    width: var(--anchomaximo);
+    margin: 0;
+
+
+}
+
+
+
+/* inicio de header*/
+header .nav-top {
+    background-color: var(--colorsecundario);
+    padding: 1.25rem 0;
+
+}
+
+header .nav-top .container {
+    display: flex;
+    justify-content: space-around;
+
+    & a {
+        text-decoration: none;
+    }
+
+    & span {
+        color: white;
+        display: none;
+    }
+
+    & i {
+        color: var(--colorprincipal) font-size: 140%;
+    }
+}
+
+header nav .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.25rem 0.625rem;
+
+}
+
+header nav .hamburguer {
+    width: 1.875rem;
+    cursor: pointer;
+
+    & div {
+        border-top: 0.125rem solid #aaa;
+        margin-bottom: 0.625rem;
+    }
+}
+
+header figure {
+    width: calc(100% - 1.87rem);
+
+    & a {
+        display: inline-block;
+        width: 6.25rem;
+    }
+}
+
+header nav .menu {
+    width: 100%;
+
+}
+
+header nav .menu a {
+    display: block;
+    padding: 20px 0px;
+    text-align: center;
+    text-decoration: none;
+    color: #aaa;
+    border-bottom: 0.0625rem solid #aaa;
+
+    &:hover {
+        color: var(--colorprincipal);
+    }
+
+}
+
+header nav .menu li:last-child a {
+    border-bottom: 0;
+}
+
+header nav .menu .activo {
+    color: var(--colorprincipal);
+}
+
+/* mediaqueries*/
+@media(min-width: 37.5rem) {
+    header .nav-top .container {
+        & i {
+            font-size: 150%;
+        }
+
+        section .grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--gap);
+        }
+
+        & article {
+            padding: 1.25rem;
+            border-bottom: 0;
+            border-left: 1px solid #aaa;
+        }
+    }
+
+    section .grid article:last-child {
+        grid-column: 1/3;
+    }
+}
+
+
+/*@media (min-width: 48rem) {
+    header .nav .container {
+        flex-wrap: nowrap;
+    }
+
+    header .menu {
+        display: flex;
+        justify-content: end;
+    }
+
+}
+
+/* inicio hero*/
+
+.hero {
+    background-image: url(../fondo.jpg);
+    padding: 11.875rem 0.625rem;
+    background-size: cover;
+    background-position: center;
+    background-color: #777;
+    background-blend-mode: multiply;
+
+    & h1 {
+        font-family: var(--fuentetitulo);
+        color: white;
+        font-size: 2.25rem;
+    }
+
+    & h2 {
+        color: var(--colorprincipal);
+        font-size: 1.25rem;
+        margin: var(--gap) 0;
+
+    }
+
+    & p {
+        color: white;
+    }
+}
+
+.boton {
+    display: inline-block;
+    background-color: var(--colorprincipal);
+    padding: 1.15rem;
+    text-decoration: none;
+    color: white;
+    margin: var(--gap) 0;
+    border: 1px solid var(--colorprincipal);
+
+    &:hover {
+        background-color: transparent;
+        color: var(--colorprincipal);
+
+        & i {
+            transition: 0.5s;
+            transform: translateX(0.3125rem);
+        }
+
+    }
+
+}
+
+.hero .social {
+    display: flex;
+    justify-content: space-between;
+    width: 10rem;
+
+    & a {
+        color: white;
+        font-size: 2rem;
+    }
+}
+
+/*footer*/
+
+main section {
+    padding: 2.25rem 0.625rem;
+
+}
+
+section .container h2 {
+    font-family: var(--fuentetitulo);
+    font-size: 2rem;
+    text-align: center;
+
+
+    & span {
+        color: var(--colorprincipal);
+    }
+}
+
+section .container .underline {
+    position: relative;
+    width: 6.25rem;
+    margin: 0 auto 1.875rem auto;
+    color: var(--colorprincipal);
+    font-weight: 700;
+    text-align: center;
+
+    & hr {
+        position: absolute;
+        top: -0.125rem;
+        width: 100%;
+        border: 0.0625rem solid var(--colorprincipal);
+    }
+}
+
+section .grid {
+    display: grid;
+
+    & article {
+        padding: 1.25rem 0;
+        border-bottom: 1px solid #aaa;
+    }
+}
+
+section h3 {
+    margin: var(--gap) 0;
+    font-weight: 700;
+    font-size: 115%;
+
+}
+
+section p {
+    color: #666;
+    font-size: 95%;
+    line-height: 1.25rem;
+    margin-bottom: var(--gap);
+
+}
+
+section article a {
+    color: var(--colorprincipal);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+section article>div i {
+    border: 0.0625rem solid var(--colorprincipal);
+    display: inline-block;
+    padding: 0.8rem;
+    font-size: 150%;
+    color: var(--colorprincipal);
+}
+
+section h4 {
+    color: var(--colorprincipal);
+    font-size: 110%;
+    margin-bottom: var(--gap);
+}
+
+
+section figure .marco {
+    border: 3px solid var(--colorprincipal);
+    width: 90%;
+    margin-top: 1.25rem;
+    transform: rotateZ(10deg);
+
+    & img {
+        transform: rotateZ(-10deg);
+    }
+}
+
+section figure:hover :is(.marco, img) {
+    transform: rotateZ(0deg);
+}
